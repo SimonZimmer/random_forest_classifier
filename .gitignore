@@ -1,0 +1,19 @@
+### audio ###
+audio_files/
+
+
+### research_material ###
+research_material/
+
+### environment ###
+miniconda3/
+venv/
+	
+### OSX ###
+.DS_Store
+
+### Pycharm ###
+.idea/
+
+### python ###
+*.ipynb
