@@ -2,7 +2,8 @@
 audio_files/
 
 
-### research_material ###
+### non-code material ###
+plots_diagrams/
 research_material/
 
 ### environment ###
@@ -15,5 +16,8 @@ venv/
 ### Pycharm ###
 .idea/
 
-### python ###
-*.ipynb
+### tools ###
+essentia/
+
+### tutorial ###
+iris_flower.ipynb
