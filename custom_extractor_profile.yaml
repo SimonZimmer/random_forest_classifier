@@ -1,0 +1,25 @@
+startTime: 0
+endTime: 1
+outputFrames: 0
+outputFormat: json
+requireMbid: false
+indent: 4
+
+lowlevel:
+    frameSize: 2048
+    hopSize: 1024
+    zeroPadding: 0
+    windowType: blackmanharris62
+    silentFrames: noise
+
+rhythm:
+    method: degara
+    minTempo: 60
+    maxTempo: 250
+
+tonal:
+    frameSize: 4096
+    hopSize: 2048
+    zeroPadding: 0
+    windowType: blackmanharris62
+    silentFrames: noise
