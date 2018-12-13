@@ -4,6 +4,7 @@ import pandas
 import os
 import numpy as np
 import pickle
+import random
 
 list_of_files = os.listdir("./audio_files/")
 num_files = list_of_files.__len__()
@@ -47,7 +48,10 @@ for file in range(num_files):
 output.dropna(axis=1, inplace = True)
 
 print('annotate data...')
-values = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1]
+values = np.zeros(23)
+for i in range(23):
+    values[i] = random.uniform(0.0, 1.0)
+
 target = pandas.Series(data=values, index=range(0,len(values)), dtype=int, name='target')
 output = pandas.concat([output, target], axis=1)
 
