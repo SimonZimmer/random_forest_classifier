@@ -3,8 +3,7 @@ from essentia.standard import *
 import pandas
 import os
 import numpy as np
-import pickle
-import random
+import pickle as pkl
 
 list_of_files = os.listdir("./audio_files/")
 num_files = list_of_files.__len__()
@@ -47,13 +46,14 @@ for file in range(num_files):
 
 output.dropna(axis=1, inplace = True)
 
-print('annotate data...')
-#values = np.zeros(23)
-#for i in range(23):
-    #values[i] = random.uniform(0.0, 1.0)
-values = [0.1,0.2,0.01,0.001,0.24,0.99,0.2,0.12,0.1,0.12,0.21,0.13,0.13,0.12,0.11,0.14,0.15,0.14,0.12,0.16,0.133,0.121,0.141]
-target = pandas.Series(data=values, index=range(0,len(values)), dtype=int, name='target')
-output = pandas.concat([output, target], axis=1)
+# print('annotate data...')
+# #values = np.zeros(23)
+# #for i in range(23):
+#     #values[i] = random.uniform(0.0, 1.0)
+# #values = [0.1,0.2,0.01,0.001,0.24,0.99,0.2,0.12,0.1,0.12,0.21,0.13,0.13,0.12,0.11,0.14,0.15,0.14,0.12,0.16,0.133,0.121,0.141]
+# values = pkl.load(open("/Users/simonzimmermann/dev/random_forest_regressor/datasets/pkl/brunnensounds_mean.pkl"))
+# target = pandas.Series(data=values, index=range(0,len(values)), dtype=int, name='target')
+# output = pandas.concat([output, target], axis=1)
 
 output.to_pickle('test_files_features.pkl')
 print(output)
