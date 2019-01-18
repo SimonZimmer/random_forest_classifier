@@ -1,6 +1,10 @@
 ### audio ###
 audio_files/
 
+### material ###
+*.csv
+plots_diagrams/
+datasets/
 
 ### non-code material ###
 plots_diagrams/
