@@ -10,8 +10,6 @@ label_path = "/Users/simonzimmermann/dev/random_forest_regressor/datasets/vailla
 print('load data...')
 data = pkl.load(open("features.pkl"))
 
-data = pkl.load(open("/Users/simonzimmermann/dev/random_forest_regressor/test_files_features.pkl"))
-
 target_index = len(data.iloc[0]) - 1
 x_input = data.iloc[:, : target_index - 1]
 x_input = x_input.fillna(0)
