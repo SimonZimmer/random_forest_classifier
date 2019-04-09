@@ -5,6 +5,9 @@ audio_files/
 *.csv
 plots_diagrams/
 datasets/
+documentation/
+research_material/
+essentia/
 
 ### non-code material ###
 plots_diagrams/
