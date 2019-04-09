@@ -1,0 +1,69 @@
+\documentclass{scrartcl}
+\setlength{\parindent}{0em}
+\usepackage[paper=a4paper,left=25mm,right=25mm,top=25mm,bottom=25mm]{geometry}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{charter}
+\usepackage[final]{pdfpages}
+\pagestyle{headings}
+\usepackage{scrextend}
+\usepackage{graphicx}
+\usepackage[font=small]{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage[doublespacing]{setspace}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{multicol}
+\bibliographystyle{ieeetr}
+\changefontsizes[9pt]{9pt}
+
+\renewcommand{\labelitemi}{$\--$}
+\renewcommand{\sectionmark}[1]{ \markright{#1}{} }
+\renewcommand\thefootnote{\textcolor{black!50}{\arabic{footnote}}}
+\renewcaptionname{ngerman}{\figurename}{Abb.}
+
+\title{Random Forest Machine Learning an psychoakustischen Parametern}
+\subtitle{Projekt Master Medieninformatik}
+\author{Simon Zimmermann \\ Betreuer: Dipl. Ing. Siegbert Versümer}
+\date{\today{}, Düsseldorf}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=SPARQL,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\begin{document}
+	{\let\newpage\relax\maketitle}
+	\begin{abstract}{}
+		Mit dem Ziel bedeutungsvolle psychoakustische Parameter aus Audiodaten zu gewinnen, genießen neuronale Netzwerke und Deep Learning im Besonderen bereits große Beliebtheit.
+		Wenn es allerdings darum geht die Entscheidungsfindung eines Deep Learning Algorithmus nachzuvollziehen entstehen signifikante Hindernisse, die erschwerend auf Konzeptionen wirken in denen der Ursprung einer Klassifierung von großer Wichtigkeit sind. Da diese Hindernisse aktuell trotz einiger Bemühungen (\cite{Oh2017}, \cite{Shwartz-Ziv2017}) weiterhin bestehen, soll sich in dieser Arbeit zurück auf den klassischen Machine Learning Algorithmus Random Forest besonnen werden.
+		Im Besonderen soll dabei von einer Reihe von einfachen psychoakustischen Merkmalen auf das komplexere Merkmal der Salienz geschlossen werden und die Entscheidungsfindung des Random Forests evaluiert werden.
+	\end{abstract}
+
+	\begin{multicols}{2}
+		\section{Einleitung}
+		\section{Architektur}
+		\section{Ergebnisse \& Ausblick}
+	\end{multicols}
+
+	\bibliography{/Users/simonzimmermann/Documents/random_forest.bib}
+
+\end{document}
+
