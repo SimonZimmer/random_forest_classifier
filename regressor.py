@@ -5,8 +5,15 @@ from sklearn.ensemble import RandomForestRegressor
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-def run_regressor(score_list, plot):
-    label_path = "/Users/simonzimmermann/dev/random_forest_regressor/datasets/vaillant_1/pkl/vaillant_1.pkl"
+
+def run_regressor(label_path, score_list, plot):
+    """run an instance of a random forest regressor.
+
+    :param label_path: the path to a .pkl file containing the target annotations
+    :param score_list: list for storing the score of the model
+    :param plot: flag to signalise if a feature importance barplot should be created
+    :return list with appended score of the model
+    """
     print('load data...')
     data = pkl.load(open("features.pkl"))
 
@@ -23,6 +30,7 @@ def run_regressor(score_list, plot):
     print("score= " + str(regressor.score(x_test, y_test)))
     score_list.append(regressor.score(x_test, y_test))
 
+    # make a barplot diagram to determine the most important features
     if plot:
         print('plotting feature importance...')
         feature_imp = pd.Series(regressor.feature_importances_, index=x_input.columns).sort_values(ascending=False)
@@ -35,7 +43,7 @@ def run_regressor(score_list, plot):
         sns.barplot(ax=ax, x=feature_imp, y=feature_imp.index, )
         plt.title("Feature Importance Score")
         plt.ylabel('Features')
-        plt.title("Audiotory Feature Importance")
+        plt.title("Auditory Feature Importance")
         plt.legend()
         plt.savefig("feature_importance_graph", dpi=300, facecolor='w', edgecolor='w',
                     orientation='portrait', papertype=None, format=None,
@@ -46,6 +54,7 @@ def run_regressor(score_list, plot):
     return score_list
 
 
+# calculate scores for consecutive runs of the random forest and average the result
 scores = []
 avg_score = 0
 num_iterations = 1000
